@@ -1,3 +1,18 @@
+terraform {
+  required_providers {
+    “azurerm” = {
+      source = “hashicorp/azurerm”
+      version = “>= 2.56.0”
+    }
+  }
+}
+provider {
+  tenant_id = var.tenant_id
+  subscription_id = var.subscription_id
+  client_id = var.client_id
+  client_secret = var.client_secret
+  features {}
+}
 resource "azurerm_resource_group" "aks_demo_rg" {
   name     = "aks-free-tier-demo"
   location = "East US"
@@ -22,7 +37,6 @@ resource "azurerm_kubernetes_cluster" "aks_free_tier_demo" {
   tags = {
     Environment = "Production"
   }
-  features {}
 }
 
 output "client_certificate" {
