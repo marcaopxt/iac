@@ -22,6 +22,7 @@ resource "azurerm_kubernetes_cluster" "aks_free_tier_demo" {
   tags = {
     Environment = "Production"
   }
+  features {}
 }
 
 output "client_certificate" {
