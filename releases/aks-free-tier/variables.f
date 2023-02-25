@@ -21,7 +21,7 @@ variable "client_id" {
   type = string
   description = ""
 }
-variable "cliebt_secret" {
+variable "client_secret" {
   type = string
   description = ""
 }
