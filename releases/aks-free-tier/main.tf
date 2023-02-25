@@ -5,9 +5,9 @@ resource "azurerm_resource_group" "aks_demo_rg" {
 
 resource "azurerm_kubernetes_cluster" "aks_free_tier_demo" {
   name                = "aks-free-tier-demo"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
-  dns_prefix          = "exampleaks1"
+  location            = azurerm_resource_group.aks_demo_rg.location
+  resource_group_name = azurerm_resource_group.aks_demo_rg.name
+  dns_prefix          = "aks-free"
 
   default_node_pool {
     name       = "default"
@@ -25,12 +25,12 @@ resource "azurerm_kubernetes_cluster" "aks_free_tier_demo" {
 }
 
 output "client_certificate" {
-  value     = azurerm_kubernetes_cluster.example.kube_config.0.client_certificate
+  value     = azurerm_kubernetes_cluster.aks_free_tier_demo.kube_config.0.client_certificate
   sensitive = true
 }
 
 output "kube_config" {
-  value = azurerm_kubernetes_cluster.example.kube_config_raw
+  value = azurerm_kubernetes_cluster.aks_free_tier_demo.kube_config_raw
 
   sensitive = true
 }
