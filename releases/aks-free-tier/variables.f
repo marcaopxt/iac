@@ -17,3 +17,11 @@ variable "cluster_name" {
   type = string
   description = ""
 }
+variable "client_id" {
+  type = string
+  description = ""
+}
+variable "cliebt_secret" {
+  type = string
+  description = ""
+}
