@@ -1,34 +1,34 @@
 variable "prefix" {
   description = "A prefix used for all resources in this example"
-  default = ""
+  default     = ""
 }
 
 variable "location" {
   description = "The Azure Region in which all resources in this example should be provisioned"
-  default = "East US"
+  default     = "East US"
 }
 variable "tenant_id" {
-  type = string
+  type        = string
   description = ""
-  default = ""
+  default     = ""
 }
 variable "subscription_id" {
-  type = string
+  type        = string
   description = ""
-  default = ""
+  default     = ""
 }
 variable "cluster_name" {
-  type = string
+  type        = string
   description = ""
-  default = ""
+  default     = ""
 }
 variable "client_id" {
-  type = string
+  type        = string
   description = ""
-  default = ""
+  default     = ""
 }
 variable "client_secret" {
-  type = string
+  type        = string
   description = ""
-  default = ""
+  default     = ""
 }
